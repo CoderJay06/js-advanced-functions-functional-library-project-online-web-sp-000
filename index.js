@@ -7,7 +7,10 @@ const fi = (function() {
 
 
     each: function(collection, callback) {
-      collection.forEach((val, k, collection) => callback(val, k, collection))
+      for (const key in collection) {
+        callback(collection[key], key, collection)
+      }
+      // collection.forEach((val, k, collection) => callback(val, k, collection))
       
       return collection
     },
